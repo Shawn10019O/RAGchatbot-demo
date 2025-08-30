@@ -1,0 +1,40 @@
+{
+    "name": "CHATBOT",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "fish"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.isort",
+                "ms-python.vscode-pylance",
+                "njpwerner.autodocstring",
+                "shardulm94.trailing-spaces",
+                "shd101wyy.markdown-preview-enhanced",
+                "oderwat.indent-rainbow",
+                "GitHub.Copilot",
+                "GitHub.copilot-chat",
+                "DanielSanMedium.dscodegpt",
+                "christian-kohler.path-intellisense",
+                "esbenp.prettier-vscode",
+                "DavidAnson.vscode-markdownlint",
+                "ms-python.autopep8",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "runArgs": [
+        "--env-file",
+        ".env"
+    ],
+    "forwardPorts": [
+        8000
+    ],
+    "postCreateCommand": "pip install --upgrade pip && pip install --user -r requirements.txt",
+    "remoteUser": "vscode"
+}
